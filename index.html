@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="keywords" content="ワッゼド,ＬＥＤペンライト,バーサーライト,翻訳,ＡＰＰ,ＰＩＣ，ＡＶＲ，スマホアプリ，九州" />
+  <meta name="keywords" content="ワッゼド,ＬＥＤペンライト,バーサーライト,翻訳,ＡＰＰ,ＰＩＣ，ＡＶＲ，コンサート，九州" />
   <meta name="description" content="株式会社ワッゼドは、中小零細企業の味方です。企画立案から量産までお手伝いします。" />
   <meta name="viewport"  content="width=device-width, initial-scale=1.0">
-  <title>スィング｜ペンライト</title>
+  <title class="notranslate">スィング｜ペンライト</title>
   <meta property="og:title" content="株式会社ワッゼド|皆様に感動と楽しい時間をご提供します">
   <meta property="og:description" content="株式会社ワッゼドは、中小零細企業の味方です。企画立案から量産までお手伝いします。">
   <meta property="og:url" content="http://wazzedo.hippy.jp/">
@@ -15,7 +15,8 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="http://wazzedo.hippy.jp" />
   <link rel="stylesheet" href="swing.css"  type="text/css">
-  <link rel="shortcut icon" href="2679699_fav.ico">
+  <link rel="shortcut icon" href="faviconwazzedo.ico" type="image/vnd.microsoft.icon"/>
+  <link rel="icon" href="faviconwazzedo.ico" type="image/vnd.microsoft.icon" />
     <link href='https://fonts.googleapis.com/css?family=Rubik:400,900italic' rel='stylesheet' type='text/css'>
     <link href="https://static.tumblr.com/xngweh4/lthnr6vng/colpick.css" rel="stylesheet" />
 
@@ -28,6 +29,7 @@
 </head>
 <body>
   <div class="font-container">
+    <h6 class="notranslate">言語選択は右をクリック下さい。</h6>
     <div id="google_translate_element"></div>
     <script type="text/javascript">
      function googleTranslateElementInit() {
@@ -53,7 +55,7 @@
            <input class="none font-weight" type="range" min="100" max="900" value="300" id="setFontWeight" step="5" ><p class="font weight"><span class="notranslate">T字の太さ</span></p>
       </div>
       <!--入力画面-->
-      <div class="led-display" ><input type="text" id="name"  value="" placeholder="5文字入力ください"  maxlength="5"><p><span class="notranslate">文字入力画面＊最大5文字</span></p></div>
+      <div class="led-display" ><span class="notranslate"><input type="text" id="name"  value="" placeholder="5文字入力ください"  maxlength="5"></span><p><span class="notranslate">文字入力画面＊最大5文字</span></p></div>
 
       <div class="return"><span class="notranslate"><a href="index.html">ホームヘ</a></span></div>
 
@@ -62,19 +64,22 @@
          <img src="blade2.png"  height="260"  width="auto" alt="ペンライト" class="i">
          <!--<img src="blade2.png" class="i">-->
       </div>
-      <!--カラーピッカー  -->
-         <div class="container-fluid">
-           <div class="row">
-             <div class="col">
-               <span class="notranslate"><h5>カラー入力画面：下記のボックスをクリック</h5></span>
-               <div class="form-group">
-                 <label for="text"><span class="notranslate">カラーモニター</span></label>
-                 <input name="text" type="text" value="#f6f6f6" id="picker-color"/>
-               </div>
+      <!--カラースライダー  -->
+      <div class="color-slider">
+     <form>
+       <!--<label for="red" class="redText">Red</label>-->
+     <input type="range" min="0" max="255" step="1" value="128" id="red" name="red"><p><span class="notranslate">Red</span></p>
 
-             </div>
-           </div>
-         </div>
+      <!--<label for="green" class="greenText">Green</label>-->
+     <input type="range" min="0" max="255" step="1" value="128" id="green" name="green"><p><span class="notranslate">Green</span></p>
+
+      <!--<label for="blue" class="blueText">Blue</label>-->
+     <input type="range" min="0" max="255" step="1" value="128" id="blue" name="blue"><p><span class="notranslate">Bluee</span></p>
+     </form>
+     <div class="heading">
+          <h3 contenteditable>rgb(60, 51, 130)</h3>
+     </div>
+
 
     </div>
   <script type="text/javascript" src="swing.js"></script>
