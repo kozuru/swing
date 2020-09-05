@@ -1,19 +1,23 @@
-{
+* {
   box-sizing: border-box;
 }
-
-html, body {
+/*html, body {
   height: 100%;
-}
-
+}*/
 body {
   background: #022;
    padding: 0 16px;
 }
+.font-container h6{
+  color:#00ffff;
+  margin-top: -2px;
+  text-align: right;
+  font-size:14px;
+}
 /*翻訳css*/
 #google_translate_element {
   position: absolute;
-  tops: calc(53px + 16px);
+  top:20px;
   right: 10px !important;
 }
 
@@ -35,7 +39,7 @@ body {
 }
 
 .goog-te-menu2 {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 .goog-te-menu-value {
@@ -109,7 +113,7 @@ body {
 /*ドットフォントcss*/
 .output1{
    margin-left:50px;
-   margin-top:20px;
+   margin-top:-25px;
  }
  .output1 p{
    color:#eee;
@@ -151,7 +155,7 @@ body {
 /*font-variable css*/
 .font-variable{
   margin-left:500px;
-  margin-top:360px;
+  margin-top:350px;
 }
 .font-variable p{
   margin-top:2px;
@@ -196,7 +200,7 @@ input[type=range]:focus::slider-runnable-track/*-webkit-*/ {
 
 /*文字入力画面css*/
 .led-display,dis p{
-  margin-top:-300px;
+  margin-top:-340px;
   margin-left:150px;
   color:#eee;
 }
@@ -221,7 +225,7 @@ input[type=range]:focus::slider-runnable-track/*-webkit-*/ {
 
 .i{
   position:absolute;
-  top:16%;
+  top:15%;
   left:50%;
   transform-origin: bottom;
 	animation: swing 2.7s infinite;
@@ -232,35 +236,16 @@ input[type=range]:focus::slider-runnable-track/*-webkit-*/ {
 	 50% {transform: rotateZ(-35deg);}
     to {transform: rotateZ(35deg);}
 }
-/*カラーピッカーcss*/
-#picker-color {
-  margin: 0;
-  padding: 0px 10px;
-  border: 0;
-  width: 100px;
-  height: 30px;
-  border-right: 40px solid #f6f6f6;
-  line-height: 30px;
-  animation: blinkAnimeS4 .5s infinite alternate;
-
-}
-@keyframes blinkAnimeS4{
- 0%  { color: #219ddd }
- 100%{ color: #e5c100 }
-}
-.container-fluid{
+/*カラースライダーcss*/
+.color-slider{
   margin-left:860px;
-  margin-top:-170px;
+  margin-top:-200px;
   color:#fff;
+  font-size:15px;
 }
-.col h5{
-  margin-bottom:1px;
+.color-slider h1{
+  font-size:18px;
 }
-.container-fluid span{
-  margin-left:30px;
-  margin-top:-50px;
-}
-
 /*ホームへ css*/
 a{
   color:#ffff00;
@@ -272,9 +257,9 @@ a{
 /*スマホresponsive css*/
 @media (max-width: 667px) {
   #google_translate_element {
-    top: 6px;
-    left: 70px !important;
-    width: 90% !important;
+    top: 15px;
+    left: 90px !important;
+    width: 70% !important;
   }
   #google_translate_element goog-te-gadget {
     width: 90% !important;
@@ -283,7 +268,7 @@ a{
     width: 90% !important;
   }
   #google_translate_element .goog-te-gadget-simple {
-    width: calc(90% - 32px) !important;
+    width: calc(90% - 22px) !important;
     text-align: center;
   }
 }
@@ -301,8 +286,8 @@ a{
    margin-top:-300px;
    margin-left:60px;
  }
- .container-fluid{
-   margin-left:740px;
+ .color-slider{
+   margin-left:700px;
    margin-top:-170px;
  }
  a{
@@ -331,7 +316,7 @@ a{
     margin-top:-160px;
     margin-left:30px;
   }
-  .container-fluid{
+  .color-slider{
     margin-left:710px;
     margin-top:-10px;
   }
@@ -352,27 +337,22 @@ a{
    }
   .output2{
     transform:scale(0.90);
-    top: 33%;
+    top: 23%;
     left: 37.5%;
-  }
-  .i{
-    top:24%;
-    left:50%;
   }
   .font-variable{
     margin-left:240px;
     margin-top:300px;
   }
   .led-display,dis p{
+    transform:scale(0.90);
     margin-top:0px;
     margin-left:50px;
   }
-  .container-fluid{
-    margin-left:410px;
+  .color-slider{
+    transform:scale(0.90);
+    margin-left:370px;
     margin-top:-165px;
-  }
-  .container-fluid label{
-    margin-left:-10px;
   }
   a{
     margin-left:50px;
@@ -389,14 +369,15 @@ a{
      margin-top:20px;
    }
   .output2{
-    top: 18%;
+    top: 28%;
     left: 51.5%;
   }
-  .i{
-    top:24%;
-    left:50%;
+  .time{
+    transform:scale(0.95);
+    position:absolute;
+    top:16%;
+    left:1%;
   }
-
   .font-variable{
     margin-left:220px;
     margin-top:360px;
@@ -405,8 +386,8 @@ a{
     margin-top:10px;
     margin-left:50px;
   }
-  .container-fluid{
-    margin-left:420px;
+  .color-slider{
+    margin-left:380px;
     margin-top:-165px;
   }
   a{
@@ -426,27 +407,46 @@ a{
    }
   .output2{
     transform:scale(0.90);
-    top: 58%;
+    top: 21%;
     left: 37.5%;
   }
-  .i{
-    top:44%;
-    left:50%;
+  .time{
+    transform:scale(0.90);
+    position:absolute;
+    top:16%;
+    left:1%;
   }
   .font-variable{
     margin-left:180px;
     margin-top:300px;
   }
   .led-display,dis p{
+    transform:scale(0.90);
     margin-top:0px;
     margin-left:50px;
   }
-  .container-fluid{
-    margin-left:420px;
+  .color-slider{
+    transform:scale(0.90);
+    margin-left:360px;
     margin-top:-155px;
   }
   a{
     margin-left:50px;
+  }
+}
+@media  (orientation:landscape)  and (max-width:670px){
+  html,	body {
+		overflow-x: hidden;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+  .color-slider{
+    transform:scale(0.80);
+    margin-left:350px;
+    margin-top:-145px;
+  }
+  .color-slider h1{
+    display:none;
   }
 }
 @media  (orientation:portrait)  and (max-width:500px){
@@ -466,38 +466,40 @@ a{
    }
   .output2{
     transform:scale(0.75);
-    top: 20.0%;
+    top: 25.0%;
     left: 30.5%;
   }
   .time{
     transform:scale(0.70);
     position:absolute;
-    top:16%;
+    top:20%;
     left:1%;
   }
   .font-variable{
-    transform:scale(0.75);
-    margin-left:30px;
+    transform:scale(0.46);
+    margin-left:-110px;
     margin-top:160px;
+    font-size:24px;
   }
   .led-display,dis p{
-    transform:scale(0.75);
-    margin-top:-45px;
-    margin-left:-60px;
+    transform:scale(0.70);
+    margin-top:-65px;
+    margin-left:-30px;
   }
-  .container-fluid{
-    transform:scale(0.75);
-    margin-left:205px;
-    margin-top:-150px;
+  .color-slider{
+    transform:scale(0.46);
+    margin-left:160px;
+    margin-top:-405px;
+    font-size:24px;
   }
-  .container-fluid h5{
+  .color-slider h1{
     display:none;
   }
   a{
-    margin-left:-10px;
+    margin-left:20px;
   }
 }
-@media  (orientation:portrait)  and (max-width:360px){
+@media  (orientation:portrait)  and (max-width:362px){
   html,	body {
 		overflow-x: hidden;
 		overflow-y: scroll;
@@ -524,25 +526,25 @@ a{
     left:-6%;
   }
   .font-variable{
-    transform:scale(0.75);
+    transform:scale(0.69);
     margin-left:-5px;
     margin-top:160px;
   }
   .led-display,dis p{
-    transform:scale(0.75);
+    transform:scale(0.69);
     margin-top:-45px;
-    margin-left:-60px;
+    margin-left:-40px;
   }
-  .container-fluid{
-    transform:scale(0.75);
-    margin-left:205px;
-    margin-top:-150px;
+  .color-slider{
+    transform:scale(0.67);
+    margin-left:60px;
+    margin-top:-70px;
   }
-  .container-fluid h5{
+  .color-slider h1{
     display:none;
   }
   a{
-    margin-left:-10px;
+    margin-left:5px;
   }
 }
 @media  (orientation:portrait)  and (max-width:325px){
@@ -562,7 +564,7 @@ a{
    }
   .output2{
     transform:scale(0.68);
-    top: 26.5%;
+    top: 28.5%;
     left: 20.5%;
   }
   .time{
@@ -579,18 +581,22 @@ a{
   .led-display,dis p{
     transform:scale(0.68);
     margin-top:-45px;
-    margin-left:-65px;
+    margin-left:-45px;
   }
-  .container-fluid{
+  .led-display input{
+    width:70%;
+  }
+  .color-slider{
     transform:scale(0.68);
-    margin-left:160px;
-    margin-top:-150px;
+    margin-left:40px;
+    margin-top:-75px;
   }
-  .container-fluid h5{
+  .color-slider h1{
     display:none;
   }
   a{
-    margin-left:-10px;
+    margin-top:-30px;
+    margin-left:5px;
   }
 }
 @media  (orientation:portrait)  and (max-width:290px){
@@ -610,7 +616,7 @@ a{
    }
   .output2{
     transform:scale(0.68);
-    top: 23.5%;
+    top: 26.5%;
     left: 20.5%;
   }
   .time{
@@ -625,19 +631,19 @@ a{
     margin-top:125px;
   }
   .led-display,dis p{
-    transform:scale(0.68);
+    transform:scale(0.64);
     margin-top:-45px;
-    margin-left:-65px;
+    margin-left:-45px;
   }
-  .container-fluid{
-    transform:scale(0.68);
-    margin-left:150px;
-    margin-top:-150px;
+ .color-slider{
+    transform:scale(0.62);
+    margin-left:40px;
+    margin-top:-70px;
   }
-  .container-fluid h5{
+  .color-slider h1{
     display:none;
   }
   a{
-    margin-left:-10px;
+    margin-left:0px;
   }
 }
