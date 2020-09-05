@@ -1,20 +1,3 @@
-// *colorpicker*/
-$('#picker-color').colpick({
-  layout:'hex',
-  submit:1,
-  color:'#f6f6f6',
-  onSubmit:function(hsb,hex,rgb,el) {
-    $(el).colpickHide();
-  },
- onChange:function(hsb,hex,rgb,el,bySetColor) {
-   $("#output2").css("color",'#'+hex);
-
-    $(el).css('border-right-color','#'+hex);
-    if(!bySetColor) $(el).val('#' +hex);
-  }
-}).keyup(function(){
-  $(this).colpickSetColor(this.value);
-});
 
 /*翻訳*/
 // WORK IN PROGRESS BELOW
@@ -30,7 +13,7 @@ $('document').ready(function () {
             .css({
                 'color': '#544F4B',
                 'font-family': 'Roboto',
-                                'width':'70%'
+                                'width':'60%'
             });
         // Change menu's padding
         $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
@@ -42,8 +25,8 @@ $('document').ready(function () {
         $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '10px');
 
         // Change the width of the languages
-        $("iframe").contents().find('.goog-te-menu2-item').css('width', '70%');
-        $("iframe").contents().find('td').css('width', '70%');
+        $("iframe").contents().find('.goog-te-menu2-item').css('width', '60%');
+        $("iframe").contents().find('td').css('width', '60%');
 
         // Change hover effects
         $("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
@@ -63,13 +46,13 @@ $('document').ready(function () {
         // Change the iframe's size and position?
         $(".goog-te-menu-frame").css({
             'height': '100%',
-            'width': '70%',
+            'width': '60%',
             'top': '0px'
         });
         // Change iframes's size
         $("iframe").contents().find('.goog-te-menu2').css({
             'height': '100%',
-            'width': '70%'
+            'width': '60%'
         });
     });
 });
@@ -106,3 +89,80 @@ $("#setFontWeight").on("input",function () {
 $("#setLetterSpacing").on("input",function () {
           $('#output2').css("letter-spacing", $(this).val() + "px");
   });
+
+  /*カラースライダーjs*/
+  const labelRed = document.querySelector(".redText");
+const labelGreen = document.querySelector(".greenText");
+const labelBlue = document.querySelector(".blueText");
+const heading3 = document.querySelector("h3");
+
+const inputRed = document.querySelector("#red");
+const inputGreen = document.querySelector("#green");
+const inputBlue = document.querySelector("#blue");
+const bodyBg = document.querySelector('#output2');
+
+inputRed.addEventListener("input", changeBg);
+inputGreen.addEventListener("input", changeBg);
+inputBlue.addEventListener("input", changeBg);
+
+
+function changeBg() {
+    let redColor = parseInt(inputRed.value);
+    let greenColor = parseInt(inputGreen.value);
+    let blueColor = parseInt(inputBlue.value);
+    let rgbColor = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
+    let bC = bodyBg.style.color = rgbColor;
+    // console.log(bC);
+    heading3.textContent = bC;
+  
+    let regex = /\d+/g;
+    let testColor = bC.match(regex);
+    let sum = testColor.reduce((acc, num) => {
+        return acc + Number(num);
+    }, 0);
+
+    if (sum < 382) {
+        labelRed.style.color = "rgba(255, 255, 255, .75)";
+        labelGreen.style.color = "rgba(255, 255, 255, .75)";
+        labelBlue.style.color = "rgba(255, 255, 255, .75)";
+        heading3.style.color = "rgba(255, 255, 255, .75)";
+
+    } else if (sum >= 382) {
+        labelRed.style.color = "rgb(0, 0, 0)";
+        labelGreen.style.color = "rgb(0, 0, 0)";
+        labelBlue.style.color = "rgb(0, 0, 0)";
+        heading3.style.color = "rgb(0, 0, 0)";
+    }
+}
+// changeBg();
+
+heading3.addEventListener("input", givenRgb, false);
+
+function givenRgb() {
+    let givenColor = heading3.textContent;
+
+    let rgbColor = givenColor;
+    let bC = bodyBg.style.color = rgbColor;
+    heading3.textContent = bC;
+
+
+    let regex = /\d+/g;
+    let testColor = bC.match(regex);
+    let sum = testColor.reduce((acc, num) => {
+        return acc + Number(num);
+    }, 0);
+
+    if (sum < 382) {
+        labelRed.style.color = "rgba(255, 255, 255, .75)";
+        labelGreen.style.color = "rgba(255, 255, 255, .75)";
+        labelBlue.style.color = "rgba(255, 255, 255, .75)";
+        heading3.style.color = "rgba(255, 255, 255, .75)";
+
+    } else if (sum >= 382) {
+        labelRed.style.color = "rgb(0, 0, 0)";
+        labelGreen.style.color = "rgb(0, 0, 0)";
+        labelBlue.style.color = "rgb(0, 0, 0)";
+        heading3.style.color = "rgb(0, 0, 0)";
+    }
+}
+// givenRgb();
